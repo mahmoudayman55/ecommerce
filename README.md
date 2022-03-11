@@ -1,6 +1,6 @@
-# systemxecommerce
+# E-commerce
 
-systemx e-commerce
+e-commerce project with getX state mangement and python backend
 
 ## Getting Started
 
