@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/systemx/systemxecommerce/MainActivity.java
+ com.systemx.systemxecommerce.MainActivity
+com/systemx/systemxecommerce/BuildConfig.java
+ com.systemx.systemxecommerce.BuildConfig
