@@ -65,23 +65,17 @@ class HomeView extends StatelessWidget {
                             height: height * 0.35,
                             child: ClipRRect(
                               child: ImageSlideshow(
-                                /// Width of the [ImageSlideshow].
                                 width: double.infinity,
 
-                                /// Height of the [ImageSlideshow].
                                 height: 200,
 
-                                /// The page to show when first creating the [ImageSlideshow].
                                 initialPage: 0,
 
-                                /// The color to paint the indicator.
                                 indicatorColor: CustomColors.darkOrange,
 
-                                /// The color to paint behind th indicator.
                                 indicatorBackgroundColor: CustomColors.blue,
 
-                                /// The widgets to display in the [ImageSlideshow].
-                                /// Add the sample image file into the images folder
+                          
                                 children: [
                                   CachedNetworkImage(
                                     fit: BoxFit.fill,
@@ -100,16 +94,14 @@ class HomeView extends StatelessWidget {
                                   ),
                                 ],
 
-                                /// Called whenever the page in the center of the viewport changes.
                                 onPageChanged: (value) {
                                   print('Page changed: $value');
                                 },
 
-                                /// Auto scroll interval.
-                                /// Do not auto scroll with null or 0.
+                         
                                 autoPlayInterval: 0,
 
-                                /// Loops back to first slide.
+                           
                                 isLoop: true,
                               ),
                             ),
