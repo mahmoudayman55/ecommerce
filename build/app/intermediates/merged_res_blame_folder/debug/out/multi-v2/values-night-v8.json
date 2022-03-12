@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/mahmoud/Documents/systemxecommerce/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/mahmoud/Documents/systemxecommerce/ecommerce/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/mahmoud/Documents/systemxecommerce/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/mahmoud/Documents/systemxecommerce/ecommerce/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

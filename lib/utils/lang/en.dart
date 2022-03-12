@@ -15,6 +15,7 @@ const Map<String, String> en = {
   "Sign In": "Sign In",
   "Register": "  Register",
   "Email": "  Email",
+  "Brands": "Brands",
   "OR":"OR",
   "Password": "Password",
   "Account": "Account",

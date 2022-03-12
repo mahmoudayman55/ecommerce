@@ -9,14 +9,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
-import 'package:systemxecommerce/componants/styles.dart';
-import 'package:systemxecommerce/componants/ui_componant.dart';
-import 'package:systemxecommerce/core/enums/device_type.dart';
-import 'package:systemxecommerce/view/auth/login_screen.dart';
-import 'package:systemxecommerce/view/auth/register_screen.dart';
+
 
 import '../componants/profile_menu_class.dart';
+import '../componants/styles.dart';
+import '../componants/ui_componant.dart';
+import '../core/enums/device_type.dart';
 import '../core/view_models/home_view_model.dart';
+import 'auth/login_screen.dart';
+import 'auth/register_screen.dart';
 
 class MenuView extends StatelessWidget {
   @override

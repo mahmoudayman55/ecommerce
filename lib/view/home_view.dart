@@ -65,23 +65,11 @@ class HomeView extends StatelessWidget {
                             height: height * 0.35,
                             child: ClipRRect(
                               child: ImageSlideshow(
-                                /// Width of the [ImageSlideshow].
                                 width: double.infinity,
-
-                                /// Height of the [ImageSlideshow].
                                 height: 200,
-
-                                /// The page to show when first creating the [ImageSlideshow].
                                 initialPage: 0,
-
-                                /// The color to paint the indicator.
                                 indicatorColor: CustomColors.darkOrange,
-
-                                /// The color to paint behind th indicator.
                                 indicatorBackgroundColor: CustomColors.blue,
-
-                                /// The widgets to display in the [ImageSlideshow].
-                                /// Add the sample image file into the images folder
                                 children: [
                                   CachedNetworkImage(
                                     fit: BoxFit.fill,
@@ -99,17 +87,10 @@ class HomeView extends StatelessWidget {
                                         'https://i.ibb.co/PNyxC2Q/asus-rog-gaming-laptop-strix-hero-ii-gl504gm-es152t-500x500.png',
                                   ),
                                 ],
-
-                                /// Called whenever the page in the center of the viewport changes.
                                 onPageChanged: (value) {
                                   print('Page changed: $value');
                                 },
-
-                                /// Auto scroll interval.
-                                /// Do not auto scroll with null or 0.
                                 autoPlayInterval: 0,
-
-                                /// Loops back to first slide.
                                 isLoop: true,
                               ),
                             ),
@@ -131,37 +112,22 @@ class HomeView extends StatelessWidget {
                                 child: ListView.builder(
                                     padding: const EdgeInsets.all(5),
                                     scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) =>
-                                        GestureDetector(
-                                          onTap: () {
-                                            Get.to(ProductDetailsView());
-                                          },
-                                          child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: isMob ? 10 : 20),
-                                            child: SizedBox(
-                                              width: isMob
-                                                  ? width * 0.4
-                                                  : width * 0.29,
-                                              child: ProductCard(
-                                                  isMob: isMob,
-                                                  width: width,
-                                                  height: height,
-                                                  product: Product(
-                                                      discount: 0,
-                                                      id: 1523885454,
-                                                      rate: 3.2,
-                                                      name:
-                                                          "laptop dell with 32 RAM and 1T HDD with original charger",
-                                                      category: "lapTops",
-                                                      price: 5000,
-                                                      isliked: false,
-                                                      isSelected: true,
-                                                      image:
-                                                          "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
-                                            ),
-                                          ),
-                                        ),
+                                    itemBuilder: (context, index) => ProductCard(
+                                        isMob: isMob,
+                                        width: width,
+                                        height: height,
+                                        product: Product(
+                                            discount: 0,
+                                            id: 1523885454,
+                                            rate: 3.2,
+                                            name:
+                                                "laptop dell with 32 RAM and 1T HDD with original charger",
+                                            category: "lapTops",
+                                            price: 5000,
+                                            isliked: false,
+                                            isSelected: true,
+                                            image:
+                                                "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
                                     itemCount: 3),
                               ),
                             ),
@@ -181,7 +147,7 @@ class HomeView extends StatelessWidget {
                                           CustomColors.blue
                                         ],
                                         width: width * .5,
-                                        titleText: "Recommended",
+                                        titleText: "Categories",
                                         center: true),
                                   ),
                                   Padding(
@@ -215,7 +181,7 @@ class HomeView extends StatelessWidget {
                             SectionTitleBar(colors: [
                               CustomColors.deepBlue,
                               CustomColors.blue
-                            ], width: width, titleText: "Recommended"),
+                            ], width: width, titleText: "Discounts"),
                             Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: SizedBox(
@@ -224,31 +190,36 @@ class HomeView extends StatelessWidget {
                                 child: ListView.builder(
                                     padding: EdgeInsets.all(5),
                                     scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) => Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: isMob ? 10 : 20),
-                                          child: SizedBox(
-                                            width: isMob
-                                                ? width * 0.4
-                                                : width * 0.29,
-                                            child: ProductCard(
-                                                isMob: isMob,
-                                                width: width,
-                                                height: height,
-                                                product: Product(
-                                                    discount: 50,
-                                                    id: 1523885454,
-                                                    rate: 3.2,
-                                                    name:
-                                                        "laptop dell with 32 RAM and 1T HDD with original charger",
-                                                    category: "lapTops",
-                                                    price: 5000,
-                                                    isliked: false,
-                                                    isSelected: true,
-                                                    image:
-                                                        "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
-                                          ),
-                                        ),
+                                    itemBuilder: (context, index) => ProductCard(
+                                        isMob: isMob,
+                                        width: width,
+                                        height: height,
+                                        product: Product(
+                                            discount: 50,
+                                            id: 1523885454,
+                                            rate: 3.2,
+                                            description:
+                                                "laptop dell with 32 RAM and 1T HDD with original chalaptop dell with 32 RAM and 1T HDD wi"
+                                                    "th original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell wit"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                    "DD with original chargerlaptop dell with 32 RAM and 1T HDD with original "
+                                                    "chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerrgerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original charger",
+                                            name:
+                                                "laptop dell with 32 RAM and 1T HDD with original charger",
+                                            category: "lapTops",
+                                            price: 5000,
+                                            isliked: false,
+                                            isSelected: true,
+                                            image:
+                                                "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
                                     itemCount: 3),
                               ),
                             ),
@@ -863,7 +834,7 @@ class HomeView extends StatelessWidget {
                             SectionTitleBar(colors: [
                               CustomColors.deepBlue,
                               CustomColors.blue
-                            ], width: width, titleText: "Recommended"),
+                            ], width: width, titleText: "Most Sales"),
                             Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: SizedBox(
@@ -872,31 +843,22 @@ class HomeView extends StatelessWidget {
                                 child: ListView.builder(
                                     padding: EdgeInsets.all(5),
                                     scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) => Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: isMob ? 10 : 20),
-                                          child: SizedBox(
-                                            width: isMob
-                                                ? width * 0.4
-                                                : width * 0.29,
-                                            child: ProductCard(
-                                                isMob: isMob,
-                                                width: width,
-                                                height: height,
-                                                product: Product(
-                                                    discount: 50,
-                                                    id: 1523885454,
-                                                    rate: 3.2,
-                                                    name:
-                                                        "laptop dell with 32 RAM and 1T HDD with original charger",
-                                                    category: "lapTops",
-                                                    price: 5000,
-                                                    isliked: false,
-                                                    isSelected: true,
-                                                    image:
-                                                        "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
-                                          ),
-                                        ),
+                                    itemBuilder: (context, index) => ProductCard(
+                                        isMob: isMob,
+                                        width: width,
+                                        height: height,
+                                        product: Product(
+                                            discount: 50,
+                                            id: 1523885454,
+                                            rate: 3.2,
+                                            name:
+                                                "laptop dell with 32 RAM and 1T HDD with original charger",
+                                            category: "lapTops",
+                                            price: 5000,
+                                            isliked: false,
+                                            isSelected: true,
+                                            image:
+                                                "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
                                     itemCount: 3),
                               ),
                             ),
@@ -977,31 +939,22 @@ class HomeView extends StatelessWidget {
                                 child: ListView.builder(
                                     padding: EdgeInsets.all(5),
                                     scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) => Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: isMob ? 10 : 20),
-                                          child: SizedBox(
-                                            width: isMob
-                                                ? width * 0.4
-                                                : width * 0.29,
-                                            child: ProductCard(
-                                                isMob: isMob,
-                                                width: width,
-                                                height: height,
-                                                product: Product(
-                                                    discount: 50,
-                                                    id: 1523885454,
-                                                    rate: 3.2,
-                                                    name:
-                                                        "laptop dell with 32 RAM and 1T HDD with original charger",
-                                                    category: "lapTops",
-                                                    price: 5000,
-                                                    isliked: false,
-                                                    isSelected: true,
-                                                    image:
-                                                        "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
-                                          ),
-                                        ),
+                                    itemBuilder: (context, index) => ProductCard(
+                                        isMob: isMob,
+                                        width: width,
+                                        height: height,
+                                        product: Product(
+                                            discount: 50,
+                                            id: 1523885454,
+                                            rate: 3.2,
+                                            name:
+                                                "laptop dell with 32 RAM and 1T HDD with original charger",
+                                            category: "lapTops",
+                                            price: 5000,
+                                            isliked: false,
+                                            isSelected: true,
+                                            image:
+                                                "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
                                     itemCount: 3),
                               ),
                             ),

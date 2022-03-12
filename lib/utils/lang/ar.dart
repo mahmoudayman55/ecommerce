@@ -21,6 +21,7 @@ const Map<String, String> ar = {
   "Sign In With Google":"المتابعة باستخدام جوجل",
   "OR":"او",
   "Home":"الرئيسية",
+  "Brands":"ماركات",
   "Account":"حسابي",
 
 };
