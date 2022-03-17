@@ -23,5 +23,7 @@ const Map<String, String> ar = {
   "Home":"الرئيسية",
   "Brands":"ماركات",
   "Account":"حسابي",
+  "Add To Cart":"اضف الي العربة",
+  "Add To Favorite":"اضف الي المفضلة",
 
 };

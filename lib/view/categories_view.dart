@@ -107,10 +107,10 @@ class CategoriesView extends StatelessWidget {
                                         Container(
                                           color: Colors.white,
                                           width: width,
-                                          child: GridView.count(
+                                          child: GridView.count(padding: EdgeInsets.all(10),
                                               shrinkWrap: true,
                                               crossAxisCount: 4,
-                                              padding: EdgeInsets.all(5),
+
                                               crossAxisSpacing: 2,
                                               children: <String>[
                                                 "https://i.ibb.co/c28QWQZ/m1.png",
@@ -121,15 +121,19 @@ class CategoriesView extends StatelessWidget {
                                               ]
                                                   .map((String url) => GridTile(
                                                         child: Column(
+
                                                           crossAxisAlignment:
                                                               CrossAxisAlignment
                                                                   .center,
                                                           children: [
                                                             SizedBox(
                                                               width: width * 0.1,
+
+
                                                               child:
                                                                   CachedNetworkImage(
-                                                                imageUrl: url,
+
+                                                                imageUrl: url,height: height*0.04,
                                                               ),
                                                             ),
                                                             AutoSizeText(
@@ -140,7 +144,7 @@ class CategoriesView extends StatelessWidget {
                                                                   fontSize:
                                                                       ScreenUtil()
                                                                           .setSp(
-                                                                              8)),
+                                                                              5)),
                                                             )
                                                           ],
                                                         ),
@@ -178,8 +182,8 @@ class CategoriesView extends StatelessWidget {
                                               shrinkWrap: true,
                                               crossAxisCount: 4,
                                               padding: EdgeInsets.all(5),
-                                              crossAxisSpacing: 1,
-                                              mainAxisSpacing: width * 0.03,
+                                              crossAxisSpacing: width*0.01,
+                                              mainAxisSpacing: height * 0.01,
                                               children: <String>[
                                                 "https://i.ibb.co/c28QWQZ/m1.png",
                                                 "https://i.ibb.co/HTLbZk0/keyboard.png",
@@ -200,7 +204,7 @@ class CategoriesView extends StatelessWidget {
                                                               width: width * 0.1,
                                                               child:
                                                                   CachedNetworkImage(
-                                                                imageUrl: url,
+                                                                    imageUrl: url,height: height*0.04,
                                                               ),
                                                             ),
                                                             AutoSizeText(

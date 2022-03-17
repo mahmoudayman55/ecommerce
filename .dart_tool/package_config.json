@@ -254,6 +254,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "number_selection",
+      "rootUri": "file:///home/mahmoud/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/number_selection-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "octo_image",
       "rootUri": "file:///home/mahmoud/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/octo_image-1.0.1",
       "packageUri": "lib/",
@@ -494,7 +500,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2022-03-11T19:29:59.690461Z",
+  "generated": "2022-03-12T20:56:22.005444Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }

@@ -10,8 +10,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:number_selection/number_selection.dart';
+import 'package:systemxecommerce/componants/cart_product_card.dart';
 import 'package:systemxecommerce/componants/colors.dart';
 import 'package:systemxecommerce/componants/product_card.dart';
+import 'package:systemxecommerce/componants/product_price.dart';
+import 'package:systemxecommerce/componants/profile_menu_class.dart';
 import 'package:systemxecommerce/componants/search_bar.dart';
 import 'package:systemxecommerce/componants/styles.dart';
 import 'package:systemxecommerce/componants/title_text.dart';
@@ -28,6 +32,8 @@ class ProductDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int _currentValue = 1;
+
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
 
@@ -38,26 +44,28 @@ class ProductDetailsView extends StatelessWidget {
         bool isMob = deviceInfo.deviceType == DeviceType.mobile ? true : false;
         return Scaffold(
             bottomNavigationBar:
-                NavigationBar(height: height * 0.07, destinations: [
+            NavigationBar(height: height * 0.07, destinations: [
               ElevatedButton(
                 style: Styles.elevatedButtonStyle(
                     width: width * 0.7,
                     height: height * 0.07,
-
                     buttonColor: Colors.white),
-                onPressed: () {
-                  //   controller.googleSignInMethod();
-                },
+                onPressed: () {},
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      "Add to Favorite".tr,
-                      style: Styles.txtStyle(color: Colors.red,
-                          fontWeight: FontWeight.bold, fontSize: 15),
+                      "Add To Favorite".tr,
+                      style: Styles.txtStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
                     ),
-                    Icon(Icons.favorite,color: Colors.red,size: 25.w,)
-
+                    Icon(
+                      product.isliked ? Icons.favorite : Icons.favorite_border,
+                      color: Colors.red,
+                      size: 25.w,
+                    )
                   ],
                 ),
               ),
@@ -67,28 +75,81 @@ class ProductDetailsView extends StatelessWidget {
                     height: height * 0.07,
                     buttonColor: Colors.white),
                 onPressed: () {
-                  //   controller.googleSignInMethod();
+                  Get.bottomSheet(Container(
+                    padding: const EdgeInsets.all(8),
+                    color: Colors.white,
+                    height: height * 0.3,
+                    width: width,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CartProductCard(screenWidth: width,
+                            screenHeight: height,
+                            onQuantityChanged: (){},
+                            isMob: isMob,
+                            product: product,
+                            quantity: 1,
+                          maxQuantity: 20,
+                        ),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              width: width * 0.27,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  TitleText(
+                                    text: 'Total:', color: Colors.grey,),
+                                  TitleText(
+                                      text: "${product.price} ${'EGP'.tr}",
+                                      color: CustomColors.darkOrange),
+                                ],
+                              ),
+                            ),
+
+                            SizedBox(
+                                height: height * 0.07,
+                                width: width * 0.6,
+                                child: ProfileMenu(fontSize: 15,
+                                  width: width * 0.06,
+                                  text: "Add To Cart",
+                                  icon: Icon(Icons.add_shopping_cart,
+                                    color: Colors.white,),
+                                  press: () {},
+                                  buttonColor: CustomColors.blue,
+                                  titleColor: Colors.white,)),
+                          ],
+                        )
+                      ],
+                    ),
+                  ));
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
                       "Add To Cart".tr,
-                      style: Styles.txtStyle(color: CustomColors.blue,
-                          fontWeight: FontWeight.bold, fontSize: 15),
+                      style: Styles.txtStyle(
+                          color: CustomColors.blue,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
                     ),
-                 Icon(Icons.add_shopping_cart,color: CustomColors.blue,size: 25.w,)
+                    Icon(
+                      Icons.add_shopping_cart,
+                      color: CustomColors.blue,
+                      size: 25.w,
+                    )
                   ],
                 ),
               ),
             ]),
             backgroundColor: Colors.white,
             body: SafeArea(
-              child: SizedBox(
-                width: width,
-                height: height,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: SizedBox(
+                  width: width,
+                  height: height,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -101,7 +162,7 @@ class ProductDetailsView extends StatelessWidget {
                             children: [
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                MainAxisAlignment.spaceEvenly,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   SizedBox(
@@ -166,102 +227,102 @@ class ProductDetailsView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Align(alignment: Alignment.bottomCenter,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            RichText(
-                              text: TextSpan(
-                                children: <TextSpan>[
-                                  TextSpan(
-                                    text: product.discount == 0
-                                        ? '${product.price}'
-                                        : '${(product.price - ((product.price / 100) * product.discount)).floorToDouble()}',
-                                    style: TextStyle(
-                                        fontSize:
-                                            ScreenUtil().setSp(isMob ? 18 : 15),
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  TextSpan(
-                                    text: ' ${"EGP".tr}',
-                                    style: TextStyle(
-                                      fontSize: isMob ? 15.sp : 12.sp,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: product.discount == 0
+                                      ? '${product.price}'
+                                      : '${(product.price -
+                                      ((product.price / 100) *
+                                          product.discount)).floorToDouble()}',
+                                  style: TextStyle(
+                                      fontSize:
+                                      ScreenUtil().setSp(isMob ? 18 : 15),
                                       color: Colors.black,
-                                    ),
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: ' ${"EGP".tr}',
+                                  style: TextStyle(
+                                    fontSize: isMob ? 15.sp : 12.sp,
+                                    color: Colors.black,
                                   ),
-                                  product.discount == 0
-                                      ? TextSpan()
-                                      : TextSpan(
-                                          text: '\n${product.price}',
-                                          style: TextStyle(
-                                              decoration:
-                                                  TextDecoration.lineThrough,
-                                              fontSize: ScreenUtil().setSp(
-                                                  product.discount != 0
-                                                      ? (isMob ? 15 : 12)
-                                                      : (isMob ? 18 : 15)),
-                                              color: product.discount != 0
-                                                  ? Colors.black54
-                                                  : Colors.black),
-                                        ),
-                                  product.discount == 0
-                                      ? TextSpan()
-                                      : TextSpan(
-                                          text: ' ${"EGP".tr}',
-                                          style: TextStyle(
-                                            fontSize: ScreenUtil()
-                                                .setSp(isMob ? 15 : 12),
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                  product.discount == 0
-                                      ? TextSpan()
-                                      : TextSpan(
-                                          text:
-                                              ' ${product.discount}% ' + "OFF".tr,
-                                          style: TextStyle(
-                                            color: Colors.green,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: ScreenUtil()
-                                                .setSp(isMob ? 15 : 12),
-                                          ),
-                                        ),
-                                ],
+                                ),
+                                product.discount == 0
+                                    ? TextSpan()
+                                    : TextSpan(
+                                  text: '\n${product.price}',
+                                  style: TextStyle(
+                                      decoration:
+                                      TextDecoration.lineThrough,
+                                      fontSize: ScreenUtil().setSp(
+                                          product.discount != 0
+                                              ? (isMob ? 15 : 12)
+                                              : (isMob ? 18 : 15)),
+                                      color: product.discount != 0
+                                          ? Colors.black54
+                                          : Colors.black),
+                                ),
+                                product.discount == 0
+                                    ? TextSpan()
+                                    : TextSpan(
+                                  text: ' ${"EGP".tr}',
+                                  style: TextStyle(
+                                    fontSize: ScreenUtil()
+                                        .setSp(isMob ? 15 : 12),
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                product.discount == 0
+                                    ? TextSpan()
+                                    : TextSpan(
+                                  text:
+                                  ' ${product.discount}% ' + "OFF".tr,
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: ScreenUtil()
+                                        .setSp(isMob ? 15 : 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          RatingBar(
+                            textDirection: TextDirection.ltr,
+                            itemSize: 20.w,
+                            updateOnDrag: false,
+                            ignoreGestures: true,
+                            initialRating: product.rate,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            ratingWidget: RatingWidget(
+                              full: Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              half: Directionality(
+                                  textDirection: TextDirection.ltr,
+                                  child: Icon(
+                                    Icons.star_half,
+                                    color: Colors.amber,
+                                  )),
+                              empty: Icon(
+                                Icons.star_border,
+                                color: Colors.amber,
                               ),
                             ),
-                            RatingBar(
-                              textDirection: TextDirection.ltr,
-                              itemSize: 20.w,
-                              updateOnDrag: false,
-                              ignoreGestures: true,
-                              initialRating: product.rate,
-                              direction: Axis.horizontal,
-                              allowHalfRating: true,
-                              itemCount: 5,
-                              ratingWidget: RatingWidget(
-                                full: Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
-                                ),
-                                half: Directionality(
-                                    textDirection: TextDirection.ltr,
-                                    child: Icon(
-                                      Icons.star_half,
-                                      color: Colors.amber,
-                                    )),
-                                empty: Icon(
-                                  Icons.star_border,
-                                  color: Colors.amber,
-                                ),
-                              ),
-                              itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                              onRatingUpdate: (rating) {
-                                print(rating);
-                              },
-                            )
-                          ],
-                        ),
+                            itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          )
+                        ],
                       ),
                     ],
                   ),

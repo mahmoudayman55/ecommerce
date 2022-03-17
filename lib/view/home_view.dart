@@ -14,6 +14,7 @@ import 'package:systemxecommerce/componants/search_bar.dart';
 import 'package:systemxecommerce/componants/title_text.dart';
 import 'package:systemxecommerce/componants/ui_componant.dart';
 import 'package:systemxecommerce/core/enums/device_type.dart';
+import 'package:systemxecommerce/view/control_view.dart';
 import 'package:systemxecommerce/view/product_details.dart';
 
 import '../componants/section_title_bar.dart';
@@ -23,6 +24,8 @@ import '../models/product_model.dart';
 //import 'package:skysoft_admin/core/view_model/home_view_model.dart';
 
 class HomeView extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations(
@@ -44,8 +47,8 @@ class HomeView extends StatelessWidget {
                 width: width,
                 height: height,
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: ScreenUtil().setWidth(5)),
+                  padding: EdgeInsets.symmetric(
+                      vertical: ScreenUtil().setWidth(5)),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -53,8 +56,10 @@ class HomeView extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(bottom: 10.0),
-                          child:
-                              SearchBar(height * 0.06, width * 0.7, 50, 50, () {
+                          child: SearchBar(height * 0.06, width * 0.7, 50, 50,
+                              () {
+
+
                             print('search');
                           }),
                         ),
@@ -154,8 +159,9 @@ class HomeView extends StatelessWidget {
                                     padding: const EdgeInsets.all(5.0),
                                     child: SizedBox(
                                       width: width,
-                                      height:
-                                          isMob ? height * 0.1 : height * 0.15,
+                                      height: isMob
+                                          ? height * 0.1
+                                          : height * 0.15,
                                       child: ListView.builder(
                                           padding: EdgeInsets.all(5),
                                           scrollDirection: Axis.horizontal,
@@ -198,28 +204,43 @@ class HomeView extends StatelessWidget {
                                             discount: 50,
                                             id: 1523885454,
                                             rate: 3.2,
-                                            description:
-                                                "laptop dell with 32 RAM and 1T HDD with original chalaptop dell with 32 RAM and 1T HDD wi"
-                                                    "th original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell wit"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"  "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
-                                                    "DD with original chargerlaptop dell with 32 RAM and 1T HDD with original "
-                                                    "chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerrgerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original charger",
-                                            name:
-                                                "laptop dell with 32 RAM and 1T HDD with original charger",
+                                            description: "laptop dell with 32 RAM and 1T HDD with original chalaptop dell with 32 RAM and 1T HDD wi"
+                                                "th original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell wit"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "h 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T H"
+                                                "DD with original chargerlaptop dell with 32 RAM and 1T HDD with original "
+                                                "chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerrgerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original chargerlaptop dell with 32 RAM and 1T HDD with original charger",
+                                            name: "laptop dell with 32 RAM and 1T HDD with original charger",
                                             category: "lapTops",
                                             price: 5000,
                                             isliked: false,
                                             isSelected: true,
-                                            image:
-                                                "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
+                                            image: "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat")),
                                     itemCount: 3),
                               ),
                             ),
@@ -250,7 +271,8 @@ class HomeView extends StatelessWidget {
                                     crossAxisSpacing:
                                         isMob ? (width * 0.07) : width * 0.03,
                                     mainAxisSpacing: width * 0.03,
-                                    childAspectRatio: isMob ? 2.8 / 4.2 : 2 / 1,
+                                    childAspectRatio:
+                                        isMob ? 2.8 / 4.2 : 2 / 1,
                                     children: [
                                       GridTile(
                                           child: Container(
@@ -263,7 +285,8 @@ class HomeView extends StatelessWidget {
                                                 children: [
                                                   AutoSizeText(
                                                     "UP To 70%",
-                                                    textAlign: TextAlign.center,
+                                                    textAlign:
+                                                        TextAlign.center,
                                                     style: TextStyle(
                                                         fontSize: ScreenUtil()
                                                             .setSp(isMob
@@ -275,17 +298,19 @@ class HomeView extends StatelessWidget {
                                                   ),
                                                   AutoSizeText(
                                                     "Don't waste the chance",
-                                                    textAlign: TextAlign.center,
+                                                    textAlign:
+                                                        TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: ScreenUtil()
-                                                          .setSp(
-                                                              isMob ? 15 : 12),
+                                                          .setSp(isMob
+                                                              ? 15
+                                                              : 12),
                                                       color: Colors.white,
                                                     ),
                                                   ),
                                                   Container(
-                                                      padding: EdgeInsets.all(
-                                                          10),
+                                                      padding:
+                                                          EdgeInsets.all(10),
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
@@ -293,7 +318,8 @@ class HomeView extends StatelessWidget {
                                                                       isMob
                                                                           ? 15
                                                                           : 25),
-                                                          color: Colors.white),
+                                                          color:
+                                                              Colors.white),
                                                       width: isMob
                                                           ? width * 0.25
                                                           : width * 0.19,
@@ -303,14 +329,16 @@ class HomeView extends StatelessWidget {
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(isMob
-                                                                    ? 15
-                                                                    : 25),
+                                                                .circular(
+                                                                    isMob
+                                                                        ? 15
+                                                                        : 25),
                                                         child:
                                                             CachedNetworkImage(
                                                           imageUrl:
                                                               "https://i.ibb.co/zZ4c7mH/DELL.png",
-                                                          fit: BoxFit.scaleDown,
+                                                          fit: BoxFit
+                                                              .scaleDown,
                                                         ),
                                                       )),
                                                 ],
@@ -329,31 +357,31 @@ class HomeView extends StatelessWidget {
                                                       children: [
                                                         AutoSizeText(
                                                           "UP To 70%",
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          textAlign: TextAlign
+                                                              .center,
                                                           style: TextStyle(
-                                                              fontSize:
-                                                                  ScreenUtil()
-                                                                      .setSp(isMob
-                                                                          ? 15
-                                                                          : 12),
-                                                              color:
-                                                                  Colors.white,
+                                                              fontSize: ScreenUtil()
+                                                                  .setSp(isMob
+                                                                      ? 15
+                                                                      : 12),
+                                                              color: Colors
+                                                                  .white,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold),
                                                         ),
                                                         AutoSizeText(
                                                           "Don't waste the chance",
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          textAlign: TextAlign
+                                                              .center,
                                                           style: TextStyle(
                                                             fontSize:
                                                                 ScreenUtil()
                                                                     .setSp(isMob
                                                                         ? 15
                                                                         : 12),
-                                                            color: Colors.white,
+                                                            color:
+                                                                Colors.white,
                                                           ),
                                                         ),
                                                       ],
@@ -365,8 +393,10 @@ class HomeView extends StatelessWidget {
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(25),
-                                                          color: Colors.white),
+                                                                  .circular(
+                                                                      25),
+                                                          color:
+                                                              Colors.white),
                                                       width: width * 0.19,
                                                       height: height * 0.12,
                                                       child: ClipRRect(
@@ -377,14 +407,16 @@ class HomeView extends StatelessWidget {
                                                             CachedNetworkImage(
                                                           imageUrl:
                                                               "https://i.ibb.co/zZ4c7mH/DELL.png",
-                                                          fit: BoxFit.scaleDown,
+                                                          fit: BoxFit
+                                                              .scaleDown,
                                                         ),
                                                       )),
                                                 ],
                                               ),
                                         decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                                isMob ? 15 : 25),
+                                            borderRadius:
+                                                BorderRadius.circular(
+                                                    isMob ? 15 : 25),
                                             gradient: LinearGradient(
                                                 colors: [
                                                   CustomColors.deepBlue,
@@ -407,7 +439,8 @@ class HomeView extends StatelessWidget {
                                                 children: [
                                                   AutoSizeText(
                                                     "UP To 70%",
-                                                    textAlign: TextAlign.center,
+                                                    textAlign:
+                                                        TextAlign.center,
                                                     style: TextStyle(
                                                         fontSize: ScreenUtil()
                                                             .setSp(isMob
@@ -419,17 +452,19 @@ class HomeView extends StatelessWidget {
                                                   ),
                                                   AutoSizeText(
                                                     "Don't waste the chance",
-                                                    textAlign: TextAlign.center,
+                                                    textAlign:
+                                                        TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: ScreenUtil()
-                                                          .setSp(
-                                                              isMob ? 15 : 12),
+                                                          .setSp(isMob
+                                                              ? 15
+                                                              : 12),
                                                       color: Colors.white,
                                                     ),
                                                   ),
                                                   Container(
-                                                      padding: EdgeInsets.all(
-                                                          10),
+                                                      padding:
+                                                          EdgeInsets.all(10),
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
@@ -437,7 +472,8 @@ class HomeView extends StatelessWidget {
                                                                       isMob
                                                                           ? 15
                                                                           : 25),
-                                                          color: Colors.white),
+                                                          color:
+                                                              Colors.white),
                                                       width: isMob
                                                           ? width * 0.25
                                                           : width * 0.19,
@@ -447,14 +483,16 @@ class HomeView extends StatelessWidget {
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(isMob
-                                                                    ? 15
-                                                                    : 25),
+                                                                .circular(
+                                                                    isMob
+                                                                        ? 15
+                                                                        : 25),
                                                         child:
                                                             CachedNetworkImage(
                                                           imageUrl:
                                                               "https://i.ibb.co/zZ4c7mH/DELL.png",
-                                                          fit: BoxFit.scaleDown,
+                                                          fit: BoxFit
+                                                              .scaleDown,
                                                         ),
                                                       )),
                                                 ],
@@ -473,31 +511,31 @@ class HomeView extends StatelessWidget {
                                                       children: [
                                                         AutoSizeText(
                                                           "UP To 70%",
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          textAlign: TextAlign
+                                                              .center,
                                                           style: TextStyle(
-                                                              fontSize:
-                                                                  ScreenUtil()
-                                                                      .setSp(isMob
-                                                                          ? 15
-                                                                          : 12),
-                                                              color:
-                                                                  Colors.white,
+                                                              fontSize: ScreenUtil()
+                                                                  .setSp(isMob
+                                                                      ? 15
+                                                                      : 12),
+                                                              color: Colors
+                                                                  .white,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold),
                                                         ),
                                                         AutoSizeText(
                                                           "Don't waste the chance",
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          textAlign: TextAlign
+                                                              .center,
                                                           style: TextStyle(
                                                             fontSize:
                                                                 ScreenUtil()
                                                                     .setSp(isMob
                                                                         ? 15
                                                                         : 12),
-                                                            color: Colors.white,
+                                                            color:
+                                                                Colors.white,
                                                           ),
                                                         ),
                                                       ],
@@ -509,8 +547,10 @@ class HomeView extends StatelessWidget {
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(25),
-                                                          color: Colors.white),
+                                                                  .circular(
+                                                                      25),
+                                                          color:
+                                                              Colors.white),
                                                       width: width * 0.19,
                                                       height: height * 0.12,
                                                       child: ClipRRect(
@@ -521,14 +561,16 @@ class HomeView extends StatelessWidget {
                                                             CachedNetworkImage(
                                                           imageUrl:
                                                               "https://i.ibb.co/zZ4c7mH/DELL.png",
-                                                          fit: BoxFit.scaleDown,
+                                                          fit: BoxFit
+                                                              .scaleDown,
                                                         ),
                                                       )),
                                                 ],
                                               ),
                                         decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                                isMob ? 15 : 25),
+                                            borderRadius:
+                                                BorderRadius.circular(
+                                                    isMob ? 15 : 25),
                                             gradient: LinearGradient(
                                                 colors: [
                                                   CustomColors.deepBlue,
@@ -551,7 +593,8 @@ class HomeView extends StatelessWidget {
                                                 children: [
                                                   AutoSizeText(
                                                     "UP To 70%",
-                                                    textAlign: TextAlign.center,
+                                                    textAlign:
+                                                        TextAlign.center,
                                                     style: TextStyle(
                                                         fontSize: ScreenUtil()
                                                             .setSp(isMob
@@ -563,17 +606,19 @@ class HomeView extends StatelessWidget {
                                                   ),
                                                   AutoSizeText(
                                                     "Don't waste the chance",
-                                                    textAlign: TextAlign.center,
+                                                    textAlign:
+                                                        TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: ScreenUtil()
-                                                          .setSp(
-                                                              isMob ? 15 : 12),
+                                                          .setSp(isMob
+                                                              ? 15
+                                                              : 12),
                                                       color: Colors.white,
                                                     ),
                                                   ),
                                                   Container(
-                                                      padding: EdgeInsets.all(
-                                                          10),
+                                                      padding:
+                                                          EdgeInsets.all(10),
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
@@ -581,7 +626,8 @@ class HomeView extends StatelessWidget {
                                                                       isMob
                                                                           ? 15
                                                                           : 25),
-                                                          color: Colors.white),
+                                                          color:
+                                                              Colors.white),
                                                       width: isMob
                                                           ? width * 0.25
                                                           : width * 0.19,
@@ -591,14 +637,16 @@ class HomeView extends StatelessWidget {
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(isMob
-                                                                    ? 15
-                                                                    : 25),
+                                                                .circular(
+                                                                    isMob
+                                                                        ? 15
+                                                                        : 25),
                                                         child:
                                                             CachedNetworkImage(
                                                           imageUrl:
                                                               "https://i.ibb.co/zZ4c7mH/DELL.png",
-                                                          fit: BoxFit.scaleDown,
+                                                          fit: BoxFit
+                                                              .scaleDown,
                                                         ),
                                                       )),
                                                 ],
@@ -617,31 +665,31 @@ class HomeView extends StatelessWidget {
                                                       children: [
                                                         AutoSizeText(
                                                           "UP To 70%",
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          textAlign: TextAlign
+                                                              .center,
                                                           style: TextStyle(
-                                                              fontSize:
-                                                                  ScreenUtil()
-                                                                      .setSp(isMob
-                                                                          ? 15
-                                                                          : 12),
-                                                              color:
-                                                                  Colors.white,
+                                                              fontSize: ScreenUtil()
+                                                                  .setSp(isMob
+                                                                      ? 15
+                                                                      : 12),
+                                                              color: Colors
+                                                                  .white,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold),
                                                         ),
                                                         AutoSizeText(
                                                           "Don't waste the chance",
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          textAlign: TextAlign
+                                                              .center,
                                                           style: TextStyle(
                                                             fontSize:
                                                                 ScreenUtil()
                                                                     .setSp(isMob
                                                                         ? 15
                                                                         : 12),
-                                                            color: Colors.white,
+                                                            color:
+                                                                Colors.white,
                                                           ),
                                                         ),
                                                       ],
@@ -653,8 +701,10 @@ class HomeView extends StatelessWidget {
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(25),
-                                                          color: Colors.white),
+                                                                  .circular(
+                                                                      25),
+                                                          color:
+                                                              Colors.white),
                                                       width: width * 0.19,
                                                       height: height * 0.12,
                                                       child: ClipRRect(
@@ -665,14 +715,16 @@ class HomeView extends StatelessWidget {
                                                             CachedNetworkImage(
                                                           imageUrl:
                                                               "https://i.ibb.co/zZ4c7mH/DELL.png",
-                                                          fit: BoxFit.scaleDown,
+                                                          fit: BoxFit
+                                                              .scaleDown,
                                                         ),
                                                       )),
                                                 ],
                                               ),
                                         decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                                isMob ? 15 : 25),
+                                            borderRadius:
+                                                BorderRadius.circular(
+                                                    isMob ? 15 : 25),
                                             gradient: LinearGradient(
                                                 colors: [
                                                   CustomColors.deepBlue,
@@ -695,7 +747,8 @@ class HomeView extends StatelessWidget {
                                                 children: [
                                                   AutoSizeText(
                                                     "UP To 70%",
-                                                    textAlign: TextAlign.center,
+                                                    textAlign:
+                                                        TextAlign.center,
                                                     style: TextStyle(
                                                         fontSize: ScreenUtil()
                                                             .setSp(isMob
@@ -707,17 +760,19 @@ class HomeView extends StatelessWidget {
                                                   ),
                                                   AutoSizeText(
                                                     "Don't waste the chance",
-                                                    textAlign: TextAlign.center,
+                                                    textAlign:
+                                                        TextAlign.center,
                                                     style: TextStyle(
                                                       fontSize: ScreenUtil()
-                                                          .setSp(
-                                                              isMob ? 15 : 12),
+                                                          .setSp(isMob
+                                                              ? 15
+                                                              : 12),
                                                       color: Colors.white,
                                                     ),
                                                   ),
                                                   Container(
-                                                      padding: EdgeInsets.all(
-                                                          10),
+                                                      padding:
+                                                          EdgeInsets.all(10),
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
@@ -725,7 +780,8 @@ class HomeView extends StatelessWidget {
                                                                       isMob
                                                                           ? 15
                                                                           : 25),
-                                                          color: Colors.white),
+                                                          color:
+                                                              Colors.white),
                                                       width: isMob
                                                           ? width * 0.25
                                                           : width * 0.19,
@@ -735,14 +791,16 @@ class HomeView extends StatelessWidget {
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(isMob
-                                                                    ? 15
-                                                                    : 25),
+                                                                .circular(
+                                                                    isMob
+                                                                        ? 15
+                                                                        : 25),
                                                         child:
                                                             CachedNetworkImage(
                                                           imageUrl:
                                                               "https://i.ibb.co/zZ4c7mH/DELL.png",
-                                                          fit: BoxFit.scaleDown,
+                                                          fit: BoxFit
+                                                              .scaleDown,
                                                         ),
                                                       )),
                                                 ],
@@ -761,31 +819,31 @@ class HomeView extends StatelessWidget {
                                                       children: [
                                                         AutoSizeText(
                                                           "UP To 70%",
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          textAlign: TextAlign
+                                                              .center,
                                                           style: TextStyle(
-                                                              fontSize:
-                                                                  ScreenUtil()
-                                                                      .setSp(isMob
-                                                                          ? 15
-                                                                          : 12),
-                                                              color:
-                                                                  Colors.white,
+                                                              fontSize: ScreenUtil()
+                                                                  .setSp(isMob
+                                                                      ? 15
+                                                                      : 12),
+                                                              color: Colors
+                                                                  .white,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold),
                                                         ),
                                                         AutoSizeText(
                                                           "Don't waste the chance",
-                                                          textAlign:
-                                                              TextAlign.center,
+                                                          textAlign: TextAlign
+                                                              .center,
                                                           style: TextStyle(
                                                             fontSize:
                                                                 ScreenUtil()
                                                                     .setSp(isMob
                                                                         ? 15
                                                                         : 12),
-                                                            color: Colors.white,
+                                                            color:
+                                                                Colors.white,
                                                           ),
                                                         ),
                                                       ],
@@ -797,8 +855,10 @@ class HomeView extends StatelessWidget {
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius
-                                                                  .circular(25),
-                                                          color: Colors.white),
+                                                                  .circular(
+                                                                      25),
+                                                          color:
+                                                              Colors.white),
                                                       width: width * 0.19,
                                                       height: height * 0.12,
                                                       child: ClipRRect(
@@ -809,14 +869,16 @@ class HomeView extends StatelessWidget {
                                                             CachedNetworkImage(
                                                           imageUrl:
                                                               "https://i.ibb.co/zZ4c7mH/DELL.png",
-                                                          fit: BoxFit.scaleDown,
+                                                          fit: BoxFit
+                                                              .scaleDown,
                                                         ),
                                                       )),
                                                 ],
                                               ),
                                         decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(
-                                                isMob ? 15 : 25),
+                                            borderRadius:
+                                                BorderRadius.circular(
+                                                    isMob ? 15 : 25),
                                             gradient: LinearGradient(
                                                 colors: [
                                                   CustomColors.deepBlue,
@@ -990,10 +1052,13 @@ class HomeView extends StatelessWidget {
                                                       isMob ? 5 : 15),
                                                   decoration: BoxDecoration(
                                                       borderRadius:
-                                                          BorderRadius.circular(
-                                                              isMob ? 10 : 25),
+                                                          BorderRadius
+                                                              .circular(isMob
+                                                                  ? 10
+                                                                  : 25),
                                                       border: Border.all(
-                                                          color: Colors.orange,
+                                                          color:
+                                                              Colors.orange,
                                                           width: 1)),
                                                   width: isMob
                                                       ? width * 0.3

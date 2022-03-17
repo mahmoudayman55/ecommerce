@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:systemxecommerce/view/cart_view.dart';
 
 import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 
@@ -59,6 +60,10 @@ String language='en';
         }
       case 2:
         {
+          currentScreen= CartView();
+          break;
+        } case 3:
+        {
           currentScreen= MenuView();
           break;
         }
@@ -108,6 +113,9 @@ String language='en';
       init: ControlViewModel(),
       builder: (controller) {
         return BottomNavigationBar(
+
+          unselectedItemColor: Colors.black54,
+          selectedItemColor: CustomColors.blue,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 0,
@@ -139,6 +147,22 @@ String language='en';
                     fontSize: ScreenUtil().setSp(15),
                     fontWeight: FontWeight.bold)),
                 label: ''),
+            BottomNavigationBarItem(
+              icon:  Icon(
+                Icons.shopping_cart_outlined,
+                size: 20.w,
+
+              ),
+              activeIcon: Text(
+                'Cart'.tr,
+                style: TextStyle(
+                    fontFamily:'Tajawal',
+                    color:  CustomColors.blue,
+                    fontSize: ScreenUtil().setSp(15),
+                    fontWeight: FontWeight.bold),
+              ),
+              label: '',),
+
             // BottomNavigationBarItem(
             //     icon: Icon(
             //       Icons.shopping_cart,color: myColors.darkBlue,

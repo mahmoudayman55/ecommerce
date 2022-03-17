@@ -17,6 +17,9 @@ const Map<String, String> en = {
   "Email": "  Email",
   "Brands": "Brands",
   "OR":"OR",
+  "Add To Cart":"Add To Cart",
+  "Add To Favorite":"Add To Favorite",
+
   "Password": "Password",
   "Account": "Account",
 };
