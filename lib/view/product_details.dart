@@ -99,9 +99,9 @@ class ProductDetailsView extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   TitleText(
-                                    text: 'Total:', color: Colors.grey,),
+                                    text: 'Total:', color: Colors.grey,fontWeight: FontWeight.normal,),
                                   TitleText(
-                                      text: "${product.price} ${'EGP'.tr}",
+                                      text: "${product.price} ${'EGP'.tr}",fontWeight: FontWeight.normal,
                                       color: CustomColors.darkOrange),
                                 ],
                               ),
@@ -113,7 +113,7 @@ class ProductDetailsView extends StatelessWidget {
                                 child: ProfileMenu(fontSize: 15,
                                   width: width * 0.06,
                                   text: "Add To Cart",
-                                  icon: Icon(Icons.add_shopping_cart,
+                                  icon: Icon(Icons.add_shopping_cart,size: 18.w,
                                     color: Colors.white,),
                                   press: () {},
                                   buttonColor: CustomColors.blue,

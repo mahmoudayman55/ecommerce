@@ -30,7 +30,7 @@ class Styles {
       color: color,
       boxShadow: [
         BoxShadow(
-            color: blurColor, offset: Offset.fromDirection(2), blurRadius: 3)
+            color: blurColor, offset: Offset.fromDirection(offset), blurRadius: blurRad)
       ],
       borderRadius:  BorderRadius.circular(radius),
     );
@@ -52,9 +52,9 @@ class Styles {
   }
 
   static ButtonStyle elevatedButtonStyle(
-      {double padding =8,Color buttonColor = Colors.deepOrangeAccent,required double width,required double height}) {
+      {double radius=0,double padding =8,Color buttonColor = Colors.deepOrangeAccent,required double width,required double height}) {
     return ElevatedButton.styleFrom(fixedSize: Size(width, height),padding: EdgeInsets.all(padding),
-        primary: buttonColor, shape: RoundedRectangleBorder());
+        primary: buttonColor, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)));
   }
 
   static TextStyle txtStyle(

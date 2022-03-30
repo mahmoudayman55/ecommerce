@@ -1,4 +1,4 @@
-#Thu Mar 17 23:29:51 EET 2022
+#Wed Mar 30 06:17:19 EET 2022
 base.0=/home/mahmoud/Documents/systemxecommerce/ecommerce/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

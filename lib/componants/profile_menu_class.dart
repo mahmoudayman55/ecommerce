@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:systemxecommerce/componants/colors.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
@@ -12,7 +13,7 @@ class ProfileMenu extends StatelessWidget {
     required this.press,
      this.width=20,
     this.buttonColor=const Color(0xFFF5F6F9),
-    this.titleColor= Colors.black,
+    this.titleColor= const Color.fromARGB(255, 9,35,71),
    this.fontSize=18,
     this.showArrow=true
   }) ;
@@ -30,7 +31,7 @@ final  bool showArrow;
   Widget build(BuildContext context) {
     return FlatButton(
       padding: EdgeInsets.all(10),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       color: buttonColor,
       onPressed: press,
       child: Row(crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,8 +39,8 @@ final  bool showArrow;
         children: [
           showArrow? icon:Text('')  ,
           SizedBox(width: width),
-          Expanded(child: AutoSizeText(text.tr,style: TextStyle(fontSize: fontSize.sp,color: titleColor,fontWeight: FontWeight.bold),)),
-         showArrow? Icon(Icons.arrow_forward_ios,color: titleColor,):icon,
+          Expanded(child: AutoSizeText(text.tr,style: TextStyle(fontSize: fontSize.sp,color: titleColor,fontWeight: FontWeight.normal),)),
+         showArrow? Icon(Icons.arrow_forward_ios,color: titleColor,size: 15.w,):icon,
         ],
       ),
     );

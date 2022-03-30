@@ -27,70 +27,75 @@ class CartProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Container(
-          padding: EdgeInsets.all(5),
-          width: screenWidth * 0.17,
-          height: screenWidth * 0.15,
-          decoration: Styles.boxDecor(15,
-              offset: 15,
-              blurRad: 15,
-              blurColor: CustomColors.deepBlue.withAlpha(75)),
-          child: CachedNetworkImage(
-            imageUrl: product.image,
+    return Container(padding: EdgeInsets.all(10),
+      decoration: Styles.boxDecor(10,color: Colors.white,blurColor: CustomColors.blueShadow,offset: 1,blurRad: 1
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            margin: EdgeInsets.all(5),
+
+            width: screenWidth * 0.17,
+            height: screenWidth * 0.15,
+            decoration: Styles.boxDecor(15,
+                offset: 0,blurColor: Colors.white,
+                blurRad: 0,
+            ),
+            child: CachedNetworkImage(
+              imageUrl: product.image,
+            ),
           ),
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: screenWidth * 0.5,
-              child: RichText(
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  text: TextSpan(
-                    text: product.name,
-                    style: Styles.txtStyle(
-                        fontSize: (isMob ? 13 : 10),
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal),
-                  )),
-            ),
-            ProductPrice(
-              product,
-              isMob,
-              mobFontSize: 15,
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            SizedBox(
-              height: screenHeight * 0.1,
-              width: screenWidth * .2,
-              child: NumberSelection(
-                theme: NumberSelectionTheme(
-                    draggableCircleColor: Colors.blue,
-                    iconsColor: Colors.white,
-                    numberColor: Colors.white,
-                    backgroundColor: CustomColors.blue,
-                    outOfConstraintsColor: Colors.red),
-                initialValue: quantity,
-                minValue: 1,
-                maxValue: maxQuantity,
-                direction: Axis.horizontal,
-                withSpring: true,
-                onChanged: (int value) => onQuantityChanged,
-                enableOnOutOfConstraintsAnimation: true,
-                onOutOfConstraints: () =>
-                    print("This value is too high or too low"),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: screenWidth * 0.4,
+                child: RichText(
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    text: TextSpan(
+                      text: product.name,
+                      style: Styles.txtStyle(
+                          fontSize: (isMob ? 13 : 10),
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal),
+                    )),
               ),
-            ),
-          ],
-        ),
-      ],
+              ProductPrice(
+                product,
+                isMob,
+                mobFontSize: 13,
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: screenHeight * 0.1,
+                width: screenWidth * .2,
+                child: NumberSelection(
+                  theme: NumberSelectionTheme(
+                      draggableCircleColor: Colors.blue,
+                      iconsColor: Colors.white,
+                      numberColor: Colors.white,
+                      backgroundColor: CustomColors.blue,
+                      outOfConstraintsColor: Colors.red),
+                  initialValue: quantity,
+                  minValue: 1,
+                  maxValue: maxQuantity,
+                  direction: Axis.horizontal,
+                  withSpring: true,
+                  onChanged: (int value) => onQuantityChanged,
+                  enableOnOutOfConstraintsAnimation: true,
+                  onOutOfConstraints: () =>
+                      print("This value is too high or too low"),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
