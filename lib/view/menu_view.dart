@@ -73,7 +73,7 @@ class MenuView extends StatelessWidget {
                           ),
 
                           ProfileMenu(
-                            text: "Whatsapp 🎧",
+                            text: "Whatsapp ",
                             icon: Icon(
                               Icons.call,
                               color: Colors.green,

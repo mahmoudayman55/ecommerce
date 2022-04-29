@@ -30,7 +30,7 @@ class OrdersViewController extends StatelessWidget {
         [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
 
     return GetBuilder<HomeViewModel>(builder: (controller2) {
-      return DefaultTabController(
+      return DefaultTabController(initialIndex: 1,
         length: 3,
         child: Scaffold(
             appBar: AppBar(title: Text('Orders'),backgroundColor: CustomColors.blue,

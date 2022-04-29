@@ -349,17 +349,6 @@ class CartView extends StatelessWidget {
         isSelected: true,
         image:
             "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat"),
-    Product(
-        discount: 0,
-        id: 1523885454,
-        rate: 3.2,
-        name: "laptop dell with 32 RAM and 1T HDD with original charger",
-        category: "lapTops",
-        price: 5000,
-        isliked: false,
-        isSelected: true,
-        image:
-            "https://hackster.imgix.net/uploads/attachments/962786/1_iOi5U4IcMCkZ1AXZMjkDlQ.png?auto=compress%2Cformat"),
   ];
 
   @override
